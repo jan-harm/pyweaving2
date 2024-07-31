@@ -2,7 +2,6 @@ from __future__ import (absolute_import, division, print_function,
                         unicode_literals)
 
 from configparser import ConfigParser
-# todo: remove six (no 2.x support)
 
 from pyweaving2 import Draft, __version__
 

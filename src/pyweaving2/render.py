@@ -4,8 +4,6 @@ from __future__ import (absolute_import, division, print_function,
 import os.path
 
 from PIL import Image, ImageDraw, ImageFont
-# todo: replace PIL with pillow
-
 
 __here__ = os.path.dirname(__file__)
 

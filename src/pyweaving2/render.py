@@ -4,6 +4,7 @@ from __future__ import (absolute_import, division, print_function,
 import os.path
 
 from PIL import Image, ImageDraw, ImageFont
+# todo: replace PIL with pillow
 
 
 __here__ = os.path.dirname(__file__)
@@ -272,7 +273,9 @@ class ImageRenderer(object):
                 draw.line((startx, starty, endx, endy),
                           fill=self.numbering)
                 # draw text on left side, right justified
-                textw, texth = draw.textsize(str(treadle_no), font=self.font)
+                (left, top, right, bottom) = draw.textbbox((startx, starty), text=str(treadle_no), font=self.font)
+                textw = right - left
+                texth = top - bottom
                 draw.text((startx - textw - 2, starty + 2),
                           str(treadle_no),
                           font=self.font,

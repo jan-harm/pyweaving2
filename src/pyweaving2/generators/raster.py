@@ -1,7 +1,7 @@
 from __future__ import (absolute_import, division, print_function,
                         unicode_literals)
 
-from .. import Draft
+from pyweaving2 import Draft
 from PIL import Image
 
 

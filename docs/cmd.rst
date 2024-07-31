@@ -12,23 +12,23 @@ Draft Rendering
 
 Render a draft from a WIF file::
 
-    $ pyweaving render example.wif
+    $ pyweaving2 render example.wif
 
 Or from a JSON file::
 
-    $ pyweaving render example.json
+    $ pyweaving2 render example.json
 
 Render a draft to an image::
 
-    $ pyweaving render example.wif out.png
+    $ pyweaving2 render example.wif out.png
 
 Render a draft to an SVG (vector) file::
 
-    $ pyweaving render example.wif out.svg
+    $ pyweaving2 render example.wif out.svg
 
 Instead of treadling, convert to a liftplan::
 
-    $ pyweaving render example.wif out.png --liftplan
+    $ pyweaving2 render example.wif out.png --liftplan
 
 
 File Conversion
@@ -36,7 +36,7 @@ File Conversion
 
 Convert between WIF and JSON::
 
-    $ pyweaving convert example.wif example.json
+    $ pyweaving2 convert example.wif example.json
 
 
 Instructions
@@ -48,8 +48,8 @@ way.
 
 Show instructions for threading a draft::
 
-    $ pyweaving thread example.wif
+    $ pyweaving2 thread example.wif
 
 Show instructions for weaving::
 
-    $ pyweaving weave example.wif --liftplan --repeats 50
+    $ pyweaving2 weave example.wif --liftplan --repeats 50

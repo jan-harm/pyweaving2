@@ -4,9 +4,10 @@ from __future__ import (absolute_import, division, print_function,
 import sys
 import argparse
 
-from . import Draft, instructions
-from .wif import WIFReader, WIFWriter
-from .render import ImageRenderer, SVGRenderer
+from pyweaving2 import Draft
+from pyweaving2 import instructions
+from pyweaving2.wif import WIFReader, WIFWriter
+from pyweaving2.render import ImageRenderer, SVGRenderer
 
 
 def load_draft(infile):

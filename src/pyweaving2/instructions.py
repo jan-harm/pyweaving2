@@ -5,7 +5,7 @@ import os.path
 import time
 import json
 
-from six.moves import input
+# from six.moves import input
 
 
 def print_shafts(draft, connected):

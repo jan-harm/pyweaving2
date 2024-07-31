@@ -3,8 +3,8 @@ from __future__ import (absolute_import, division, print_function,
 
 from unittest import TestCase
 
-from .. import Color
-from ..generators import twill, dither
+from pyweaving2 import Color
+from pyweaving2.generators import twill, dither
 
 
 class TestGenerators(TestCase):

@@ -1,9 +1,10 @@
 Python Weaving Tools
 ====================
 
-Author: `Scott Torborg <http://www.scotttorborg.com>`_
+By: Jan Harm de Boer
+Original author: `Scott Torborg <http://www.scotttorborg.com>`_
 
-The goal of ``pyweaving`` is to provide functionality to:
+The goal of ``pyweaving2`` is to provide functionality to:
 
 * Parse and write WIF files, with an object-based interface
 * Render weave drafts to images
@@ -35,7 +36,7 @@ Contents
 
 .. seealso::
 
-    `What's WIF Got to Do With It? <http://www.weavezine.com/content/whats-wif-got-do-it>`_
+    `What's WIF Got to Do With It? <https://www.weavezine.com/content/whats-wif-got-do-it.html>`_
         A brief overview of the history and purpose of WIF.
 
     `The WIF Specification <http://www.mhsoft.com/wif/wif1-1.txt>`_

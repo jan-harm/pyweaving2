@@ -1,9 +1,10 @@
 from __future__ import (absolute_import, division, print_function,
                         unicode_literals)
 
-from six.moves.configparser import RawConfigParser
+from configparser import ConfigParser
+# todo: remove six (no 2.x support)
 
-from . import Draft, __version__
+from pyweaving2 import Draft, __version__
 
 
 class WIFReader(object):
@@ -11,7 +12,7 @@ class WIFReader(object):
     A reader for a specific WIF file.
     """
 
-    # TODO
+    # TODO:
     # - add support for metadata: author, notes, etc.
     # - add support for warp/weft spacing and thickness
     # - ensure that we're correctly handling the 'palette form' (might be only
@@ -164,8 +165,9 @@ class WIFReader(object):
         """
         Perform the actual parsing, and return a Draft instance.
         """
-        self.config = RawConfigParser()
+        self.config = ConfigParser()
         self.config.read(self.filename)
+        # todo: solve: no file givs waving error
 
         rising_shed = self.getbool('WEAVING', 'Rising Shed')
         num_shafts = self.config.getint('WEAVING', 'Shafts')
@@ -327,7 +329,7 @@ class WIFWriter(object):
     def write(self, filename, liftplan=False):
         assert self.draft.start_at_lowest_thread
 
-        config = RawConfigParser()
+        config = ConfigParser()
         config.optionxform = str
         config.add_section('CONTENTS')
 
@@ -346,3 +348,4 @@ class WIFWriter(object):
 
         with open(filename, 'wb') as f:
             config.write(f)
+# todo: fail on units on WARP parsing

@@ -4,7 +4,7 @@ API Reference
 Core Data Model
 ---------------
 
-.. automodule:: pyweaving
+.. automodule:: pyweaving2
     :members:
     :undoc-members:
 
@@ -12,7 +12,7 @@ Core Data Model
 WIF Import / Export
 -------------------
 
-.. automodule:: pyweaving.wif
+.. automodule:: pyweaving2.wif
     :members:
     :undoc-members:
 
@@ -20,7 +20,7 @@ WIF Import / Export
 Draft Rendering
 ---------------
 
-.. automodule:: pyweaving.render
+.. automodule:: pyweaving2.render
     :members:
     :undoc-members:
 
@@ -28,7 +28,7 @@ Draft Rendering
 Instructions
 ------------
 
-.. automodule:: pyweaving.instructions
+.. automodule:: pyweaving2.instructions
     :members:
     :undoc-members:
 
@@ -36,14 +36,14 @@ Instructions
 Utility Generators
 ------------------
 
-.. automodule:: pyweaving.generators.twill
+.. automodule:: pyweaving2.generators.twill
     :members:
     :undoc-members:
 
-.. automodule:: pyweaving.generators.tartan
+.. automodule:: pyweaving2.generators.tartan
     :members:
     :undoc-members:
 
-.. automodule:: pyweaving.generators.dither
+.. automodule:: pyweaving2.generators.dither
     :members:
     :undoc-members:

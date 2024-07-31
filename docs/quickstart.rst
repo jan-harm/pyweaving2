@@ -7,7 +7,7 @@ Install
 
 The recommended installation method is `pip <http://pip.readthedocs.org/>`_.::
 
-    $ pip install pyweaving
+    $ pip install pyweaving2
 
 You can also download a source package here `directly from the Python Package Index <https://pypi.python.org/pypi/pyweaving>`_.
 
@@ -21,10 +21,10 @@ Open a Draft
 
 Lots of great drafts are available in WIF format. A huge repository is `Handweaving.net <http://handweaving.net/>`_. To open a .wif file as an image, do::
 
-    $ pyweaving render draft.wif
+    $ pyweaving2 render draft.wif
 
 To open a draft from Python, do::
 
-    from pyweaving import WIFReader
+    from pyweaving2 import WIFReader
 
     draft = WIFReader('draft.wif').read()

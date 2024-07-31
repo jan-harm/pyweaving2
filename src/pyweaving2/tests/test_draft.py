@@ -3,7 +3,7 @@ from __future__ import (absolute_import, division, print_function,
 
 from unittest import TestCase
 
-from .. import Draft, Color
+from pyweaving2 import Draft, Color
 
 
 class TestDraft(TestCase):

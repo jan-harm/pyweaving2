@@ -3,7 +3,7 @@ from __future__ import (absolute_import, division, print_function,
 
 from operator import itemgetter
 
-from .. import Color
+from pyweaving2 import Color
 
 
 def diff_rgb(a, b):

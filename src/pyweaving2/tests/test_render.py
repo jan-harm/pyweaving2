@@ -4,8 +4,8 @@ from __future__ import (absolute_import, division, print_function,
 from unittest import TestCase
 from tempfile import NamedTemporaryFile
 
-from .. import Draft, Color
-from ..render import ImageRenderer, SVGRenderer
+from pyweaving2 import Draft, Color
+from pyweaving2.render import ImageRenderer, SVGRenderer
 
 
 class TestRender(TestCase):

@@ -30,15 +30,15 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'pyweaving'
-copyright = u'2014-2016, Scott Torborg'
+project = u'src'
+copyright = u'none'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
 # built documents.
 #
 # The full version, including alpha/beta/rc tags.
-release = '0.0.8.dev'
+release = '0.0.1.dev'
 
 # The short X.Y version. For now let's just make it the same.
 # version = '.'.join(s.split('.', 2)[:2])
@@ -55,7 +55,7 @@ pygments_style = 'sphinx'
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
-html_title = 'pyweaving ' + version
+html_title = 'src ' + version
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -63,7 +63,7 @@ html_title = 'pyweaving ' + version
 html_static_path = ['_static']
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'pyweavingdoc'
+htmlhelp_basename = 'pyweaving2doc'
 
 
 # -- Options for LaTeX output -------------------------------------------------
@@ -72,8 +72,8 @@ htmlhelp_basename = 'pyweavingdoc'
 # (source start file, target name, title, author, documentclass
 # [howto/manual]).
 latex_documents = [
-    ('index', 'pyweaving.tex', u'PyWeaving Documentation',
-     u'Scott Torborg', 'manual'),
+    ('index', 'src.tex', u'PyWeaving2 Documentation',
+     u'Jan Harm de Boer', 'manual'),
 ]
 
 # -- Options for manual page output -------------------------------------------
@@ -81,8 +81,8 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'pyweaving', u'PyWeaving Documentation',
-     [u'Scott Torborg'], 1)
+    ('index', 'src', u'PyWeaving2 Documentation',
+     [u'Jan Harm de Boer'], 1)
 ]
 
 # -- Options for Texinfo output -----------------------------------------------
@@ -92,10 +92,10 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
     ('index',
-     'pyweaving',
-     u'PyWeaving Documentation',
-     u'Scott Torborg',
-     'pyweaving',
+     'src',
+     u'PyWeaving2 Documentation',
+     u'Jan Harm de Boer',
+     'src',
      'One line description of project.',
      'Miscellaneous'),
 ]

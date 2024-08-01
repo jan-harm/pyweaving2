@@ -32,3 +32,6 @@ docs/_static/
 
 /.github/
 /.idea/
+/.travis.yml
+/bumpr.rc
+/coverage.rc

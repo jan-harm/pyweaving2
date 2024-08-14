@@ -8,19 +8,19 @@ from pyweaving2 import Draft
 from pyweaving2 import instructions
 from pyweaving2.wif import WIFReader, WIFWriter
 from pyweaving2.render import ImageRenderer, SVGRenderer
+from pathlib import Path
 
 
 def load_draft(infile):
-    if infile.endswith('.wif'):
+    infile = Path(infile).resolve()
+    if infile.suffix == '.wif':
         return WIFReader(infile).read()
-    elif infile.endswith('.json'):
+    elif infile.suffix == '.json':
         with open(infile) as f:
             return Draft.from_json(f.read())
     else:
-        raise ValueError(
-            "filename %r unrecognized: .wif and .json are supported" %
-            infile)
-
+        print(f'filepath {str(infile)}  unrecognized: only .wif and .json are supported')
+        exit(2)
 
 def render(opts):
     draft = load_draft(opts.infile)

@@ -2,8 +2,8 @@ from __future__ import (absolute_import, division, print_function,
                         unicode_literals)
 
 from configparser import ConfigParser
-
 from pyweaving2 import Draft, __version__
+from pathlib    import Path
 
 
 class WIFReader(object):
@@ -20,8 +20,10 @@ class WIFReader(object):
     allowed_units = ('decipoints', 'inches', 'centimeters')
 
     def __init__(self, filename):
-        self.filename = filename
-
+        self.filename = Path(filename).resolve()
+        if not self.filename.exists():
+            print(f'cannot find file at: {str(self.filename)}')
+            exit(2)
     def getbool(self, section, option):
         if self.config.has_option(section, option):
             return self.config.getboolean(section, option)

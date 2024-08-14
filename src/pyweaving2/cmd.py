@@ -85,12 +85,14 @@ def stats(opts):
     print("Longest Float (Weft):", weft_longest)
 
 
-def main(argv=sys.argv):
+def main(argv=None):
+    if argv is None:
+        argv = sys.argv
     p = argparse.ArgumentParser(description='Weaving utilities.',
                                 epilog='use %(prog)s command -h for more help on the specific command')
 
     # p.add_argument('infile', nargs=1)
-    subparsers = p.add_subparsers(help='command help')
+    subparsers = p.add_subparsers(required=True, help='command help')
 
 
     p_render = subparsers.add_parser('render', help='Render a draft to screen or an image file')
@@ -140,10 +142,6 @@ def main(argv=sys.argv):
         help='Print stats for a draft.')
     p_stats.add_argument('infile', help='a valid wif or json file')
     p_stats.set_defaults(function=stats)
-    # p.add_argument('infile', nargs=1)
 
-    # p.print_help()
-    # print(__name__)
-    # opts, args = p.parse_known_args(argv[1:])
-    opts, args = p.parse_args(argv[1:])
+    opts = p.parse_args(argv[1:])
     return opts.function(opts)

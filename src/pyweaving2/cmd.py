@@ -30,16 +30,21 @@ def render(opts):
         else:
             ImageRenderer(draft).save(opts.outfile)
     else:
-        ImageRenderer(draft).show()
+        result = ImageRenderer(draft).show()
+
 
 
 def convert(opts):
     draft = load_draft(opts.infile)
-    if opts.outfile.endswith('.wif'):
-        WIFWriter(draft).write(opts.outfile)
-    elif opts.outfile.endswith('.json'):
-        with open(opts.outfile, 'w') as f:
-            f.write(draft.to_json())
+    if opts.outfile:
+        if opts.outfile.endswith('.wif'):
+            WIFWriter(draft).write(opts.outfile)
+        elif opts.outfile.endswith('.json'):
+            with open(opts.outfile, 'w') as f:
+                f.write(draft.to_json())
+    else:
+        print(f'no output file given')
+        exit(2)
 
 
 def thread(opts):

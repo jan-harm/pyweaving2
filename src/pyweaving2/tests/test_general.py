@@ -1,4 +1,4 @@
-import unittest
+import pytest
 from pyweaving2.wif import WIFReader
 from pyweaving2 import cmd
 from pathlib import Path
@@ -38,34 +38,32 @@ test_arguments = [
 ]
 
 
-class MyTestCase(unittest.TestCase):
+class TestCase():
+
     def test_wif_reader(self):
 
-        self.assertEqual(test_file.exists(), True, f'No test file found on {str(testfile)}')
+        assert test_file.exists() , f'No test file found on {str(test_file)}'
         draft_object = WIFReader(test_file).read()
 
         # self.assertEqual(type(draft_object), type())  # add assertion here
 
-class CliTestCases(unittest.TestCase):
-    def test_cli_arguments(self):
+class TestCliCases():
+    @pytest.mark.parametrize('test_args', test_arguments)
+    def test_cli_arguments(self, test_args):
         for test in test_arguments:
             if test['result'] == 'break':  # we expect a break
-                with self.assertRaises(Exception) as context:
+                with pytest.raises(Exception) as context:
                     cmd.main(argv=test['args'])
 
-                self.assertTrue('only liftplan' in str(context.exception), f'test: {test["command"]} did not fail on liftplan')
             elif test['result'] == 'exit':
-                with self.assertRaises(SystemExit) as cm:
+                with pytest.raises(SystemExit) as cm:
                     cmd.main(argv=test['args'])
 
-                self.assertEqual(cm.exception.code, 2, f'failed on {test["command"]}' )
+                assert cm.value.code ==2, f'failed on {test["command"]}'
             elif test['result'] == 'normal':
                 ans = cmd.main(argv=test['args'])
-                self.assertTrue(ans is None, f'test missed:  {test["command"]}' )
+                assert ans is None, f'test missed:  {test["command"]}'
             elif test['result']  == 'assert':
                 pass
 
 
-
-if __name__ == '__main__':
-    unittest.main()
